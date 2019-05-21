@@ -6,31 +6,79 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./layui/css/layui.css">
     <script src="./layui/layui.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="./css/a.css">
+    <script type="text/javascript" src="./css/vue.js"></script>
     <title>Document</title>
     <style>
-        .wrap{
-            width: 60%;
-            margin: 0 auto;
-            border: 1px solid red;
-        }
-        
-        @media screen and (max-width: 375px)
-{
-       body
-       {
-           font-size: 17px; 
-       }
-       h1
-       {
-           font-size:1px;
-       }
-}
 
     </style>
 </head>
 <body>
-    <div class="wrap">
-        <h1>这里是标题标题</h1>
-    </div>
+    
+    
+    <header>
+            <!-- 移动端 -->
+            <div id="xs_nav" class="layui-fluid layui-hide-md">
+                <div class="layui-row  xs_nav">
+                    <div class="layui-col-xs10">白鹭科技</div>
+                    <div class="layui-col-xs1 nav_icon"><a href="">EN</a></div>
+                        <div id="app">    
+                            <button v-on:click="switchFn" style="background:none;border:none;margin-left:9px;">
+                                <img src="./images/down.png" alt="" >
+                            </button>
+                            <transition name="fa">
+                                <dl class="xs_nav_list" v-if="switchBol">
+                                    <dd><a href="">首页</a></dd>
+                                    <dd><a href="">产品</a></dd>
+                                    <dd><a href="">解决方案</a></dd>
+                                    <dd><a href="">开发者中心</a></dd>
+                                    <dd><a href="">案例</a></dd>
+                                    <dd><a href="">众包平台</a></dd>
+                                    <dd><a href="">教育</a></dd>
+                                    <dd><a href="">区块链实验室</a></dd>
+                                    <dd><a href="">社区</a></dd>
+                                    <dd><a href="">关于我们</a></dd>
+                                </dl>
+                        </transition>
+                        </div>
+
+                </div>
+            </div>
+            <!-- pc端 -->
+            <div id="nav" class="layui-fluid layui-hide-xs">   
+                <div class="nav layui-row layui-hide-xs">
+                    <div class="layui-col-md3 logo"><img src="./images/logo2.png" alt=""></div>
+                    <div class="layui-col-md8  layui-row nav_list">
+                        <ul>
+                            <li><a href="">首页</a></li>
+                            <li><a href="">产品</a></li>
+                            <li><a href="">解决方案</a></li>
+                            <li><a href="">开发者中心</a></li>
+                            <li><a href="">案例</a></li>
+                            <li><a href="">众包平台</a></li>
+                            <li><a href="">教育</a></li>
+                            <li><a href="">区块链实验室</a></li>
+                            <li><a href="">社区</a></li>
+                            <li><a href="">关于我们</a></li>
+                        </ul>
+                    </div>
+                    <div class="layui-col-md1 nav_icon layui-hide-xs"><a href="">EN</a></div>
+                </div>
+            </div>
+        </header>
 </body>
+<script type="text/javascript">
+    var vm = new Vue({
+        el:"#app",
+        data:{
+            switchBol:false
+        },//设置数据会自动添加vm下边
+        
+        methods:{
+            switchFn(){
+                this.switchBol = !this.switchBol;
+            }
+        }
+    });
+</script>
 </html>

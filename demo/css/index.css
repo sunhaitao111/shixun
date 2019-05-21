@@ -2,17 +2,7 @@
     margin: 0;
     padding: 0;
 }
-@media (min-width: 768)
-{
-       body
-       {
-           font-size: 17px; 
-       }
-       h1
-       {
-           font-size:24px;
-       }
-}
+/* pc端样式 */
 #nav{
     height: 58px;
     background-color: #1a1a1a;
@@ -52,6 +42,7 @@
     background: #487AF6;
 }
 #xs_nav{
+    /* width: 96%; */
     height: 58px;
     background-color: #1a1a1a;
 }
@@ -60,6 +51,18 @@
     color: #fff;
     line-height: 58px;
     margin: 0 auto;
+}
+.xs_nav_list{
+    width: 100%;
+    z-index: 2;
+    position: relative;
+    left: -17px;
+    background: #1a1a1a;
+    color: #fff;
+}
+.xs_nav_list dd a{
+    color: #fff;
+    margin-left: 15px;
 }
 #banner{
     width: 100%;
