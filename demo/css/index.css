@@ -155,6 +155,32 @@
     float: left;
     margin: 0 3px;
 }
+.main_xs_img{
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    background: #fff;
+    padding: 20px 15px;
+}
+.main_xs_img_title{
+    margin-bottom: 15px;
+}
+.main_xs_img_title img{
+    width: 0.625rem;
+    height: 0.9375rem;
+    margin:0.25rem 0.9375rem 0 0;
+}
+.main_xs_img_title h2{
+    font-size:0.875rem;
+}
+.main_xs_img_img{
+    width: 100%; 
+    border-radius:0.4rem;
+}
+.main_xs_img_btn{
+    margin-left: 120px;
+    background: #487AF6;
+}
 /* pc */
 .main{
     width: 65%;
