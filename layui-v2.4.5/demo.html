@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./layui/css/layui.css">
+	<script type="text/javascript" src="./layui/layui.js"></script>
+    <title>Document</title>
+</head>
+<style>    
+        *{
+            margin: 0;
+            height: 0;
+            font-family: "微软雅黑";
+        }
+        .header{
+           height: 58px;
+           background-color: #1a1a1a;
+        } 
+        .ne{
+            width: 85%;
+            height: 58px;
+            margin: 0 auto;
+        }
+        .logo{
+            height: 58px;
+        }
+        .logo img{
+            margin-top: 8px;
+            height: 40px;
+        }
+        .nav{
+            height: 58px;
+        }
+        .nav ul{
+            height: 58px;
+        }
+        .nav ul li{
+            float: left;
+            margin: 0 11px;
+            height: 58px;
+            color: white;
+        }
+        .nav ul li a{
+            line-height: 58px;
+            color: white;
+        }
+        
+        .en a{
+            width: 30px;
+            height: 30px;
+            background-color: #477ef2;
+            border-radius: 100%;
+            float: right;
+            margin-top: 15px;
+        }
+        .en a p{
+            color: white;
+            margin: 5px 0 0 5px;
+        }
+        .banner{
+            height: 380px;
+        }
+        .banner img{
+            width: 100%;
+            height: 380px;
+        }
+        .bottom{
+            width: 100%;
+            height: 70px;
+            position: relative;
+            top: -70px;
+            background-color: rgba(0, 0, 0, 0.3);
+
+        }
+        .bailu{
+            width: 60%;
+            height: 70px;
+            margin: 0 auto;
+        }
+        .keji{
+            height: 70px;
+            border-left:1px solid white; 
+            border-right: 1px solid white;
+        }
+        .keji img{
+            width: 45px;
+            height: 45px;
+            margin: 10px 0 0 15px;
+        }
+        .keji p{
+            position: relative;
+            color: white;
+            font-size: 16px;
+            top: -35px;
+            left: 90px;
+
+        }
+        .fuwu{
+            height: 70px;
+            border-left:1px solid white; 
+            border-right: 1px solid white;
+        }
+        .fuwu img{
+            width: 45px;
+            height: 45px;
+            margin: 10px 0 0 15px;
+        }
+        .fuwu p{
+            position: relative;
+            color: white;
+            font-size: 16px;
+            top: -35px;
+            left: 90px;
+        }
+        .jingxuan{
+            border-left:1px solid white; 
+            border-right: 1px solid white;
+            height: 70px;
+        }
+        .jingxuan img{
+           width: 45px;
+           height: 45px;
+           margin: 10px 0 0 15px;
+        }
+        .jingxuan p{
+            position: relative;
+            color: white;
+            font-size: 16px;
+            top: -35px;
+            left: 90px;
+        }
+        .rumen{
+            border-left:1px solid white; 
+            border-right: 1px solid white;
+            height: 70px;
+        }
+        .rumen img{
+            width: 45px;
+            height: 45px;
+            margin: 10px 0 0 15px;
+        }
+        .rumen p{
+            position: relative;
+            color: white;
+            font-size: 16px;
+            top: -35px;
+            left: 90px;
+        }
+        .content{
+            width: 70%;
+            height: 720px;
+            border: 1px solid red;
+            margin: 0 auto;
+            margin-top:80px;  
+        }
+        .yq_i{
+            width: 100%;
+            height:40px ;
+            border: 1px solid red;  
+        }
+        .yq_i p{
+            position: relative;
+            left: 15px;
+            font-size: 24px;
+        }
+        .yq_qq{
+            float: left;
+            width: 170px;
+            height:40px ;
+            border: 1px solid red;  
+        }
+        .yq_i img{
+            float: left;
+            height:23px;
+            margin-top: 7px;
+        }
+        .yq_ii{
+            width: 100%;
+            height: 630px;
+            background-color: #f6fafd;
+            margin-top: 30px;
+            border: 1px solid red;
+        }
+        .yq_ii h1{
+            height: 40px;
+            text-align: center;
+            margin-top: 20px;
+            font-size: 30px;
+        }
+        .yq_ii p{
+            height: 20px;;
+            margin-top: 10px;
+            text-align: center;
+            color: #848589;
+            font-size: 20px;
+        }
+        .yq_iii{
+            width: 90%;
+            height: 30px;
+            margin: 0 auto;
+            margin-top: 30px;
+            border: 1px solid red;
+        }
+        .yq_iii img{
+            width: 30px;
+            height: 30px;
+            border: 1px solid red;
+        }
+        .pic{
+            width: 90%;
+            height: 477px;
+            margin-left:50px;
+            border: 1px solid red;
+        }
+
+</style>
+<body>
+    <div class="layui-fluid header">
+           <div class="layui-row ne">
+            <div class="layui-col-md3 layui-col-xs3 layui-col-sm3 layui-col-xs3 logo">
+                <img src="./layui/images/logo.png">
+            </div>
+        <div class="layui-col-md7 layui-hide-xs layui-col-xs7 nav">
+        <ul>
+            <li><a href="">首页</a></li>
+            <li><a href="">产品</a></li>
+            <li><a href="">解决方案</a></li>
+            <li><a href="">开发者中心</a></li>
+            <li><a href="">案例</a></li>
+            <li><a href="">众包平台</a></li>
+            <li><a href="">教育</a></li>
+            <li><a href="">区域链实验室</a></li>
+            <li><a href="">社区</a></li>
+            <li><a href="">关于我们</a></li>
+        </ul>
+        </div>
+    <div class="layui-col-md2 layui-col-xs2 en">
+        <a href=""><p>EN</p></a>
+    </div>
+    </div>
+    </div>
+
+    <div class="banner">
+        <img src="./layui/images/kv1.jpg">
+        <div class="bottom">
+        <div class="layui-fluid title">
+                <div class="layui-row bailu">
+                <a href=""><div class="layui-col-md3 layui-col-xs3  keji"><img src="./layui/images/bottom1.png" alt=""><p>白鹭科技优势</p></div></a> 
+                <a href=""> <div class="layui-col-md3 layui-col-xs3  fuwu" ><img src="./layui/images/bottom2.png" alt=""><p>白鹭引擎服务</p> </div></a> 
+                <a href=""> <div class="layui-col-md3 layui-col-xs3  jingxuan"><img src="./layui/images/bottom3.png" alt=""><p>游戏案例精选</p> </div> </a> 
+                <a href=""> <div class="layui-col-md3 layui-col-xs3  rumen"><img src="./layui/images/bottom4.png" alt=""> <p>开发者快速入门</p></div>   </a>  
+                </div>
+        </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="layui-fluid">
+        <div class="layui-row content">
+                <div class="layui-col-md12 layui-col-xs12 yq_i">
+                        <div class="yq_qq">
+                        <img src="./layui/images/pen.png">
+                        <p>白鹭引擎</p>
+                        </div>
+                </div>
+                <div class="layui-col-md12 layui-col-xs12 yq_ii">
+                        <h1>效率至上的一站式完整开发工作流</h1>
+                        <p>2D/3D双核心渲染，开发工具链闭环整合，全流程开发，由此开始</p>
+                        <div class="yq_iii">
+                            <img src="./layui/images/engineLeft.png" alt="" style="width: 250px;
+                            height: 20px;" >
+                            <img src="./layui/images/h5.png" alt="" style="margin-left: 30px;">
+                            <img src="./layui/images/ap.png" alt="" style="margin-left: 20px;">
+                            <img src="./layui/images/fb.png" alt="" style="margin-left: 20px;">
+                            <img src="./layui/images/an.png" alt="" style="margin-left: 20px;">
+                            <img src="./layui/images/qz.png" alt="" style="margin-left: 20px;">
+                            <img src="./layui/images/wx.png" alt="" style="margin-left: 20px;">
+                            <img src="./layui/images/engineRight.png" alt=""  style="width: 250px;
+                            height: 20px;margin-left: 25px;">
+                        </div>
+                        <div class="layui-col-md12 layui-col-xs12 pic">
+                            <img src="./layui/images/iconRight.png" alt="" style="height: 170px;">
+                            <img src="./layui/images/engine1.png" alt="" style="height:477px;">
+                            <img src="./layui/images/iconLeft.png" alt="" style="height: 170px;">
+                        </div>
+                </div>
+                
+        </div>
+    </div>
+</body>
+</html>

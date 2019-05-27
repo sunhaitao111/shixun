@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./layui/css/layui.css">
+	<script type="text/javascript" src="./layui/layui.js"></script>
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        font-family: "微软雅黑";
+        box-sizing: border-box;
+    }
+    body{
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    background: #fbfbfb ;
+    }
+    .divide-line{
+        width: 1192px;
+        border-bottom: 1px solid #F5F5F7;
+    }
+    .pannel-content{
+        width: 100%;
+        padding-top: 33px;
+     
+        box-sizing: border-box;
+    }
+    .pannel-content-profession{
+        display: flex;
+        justify-content: center;
+        padding-left: 18px;
+     
+    }
+    .profession-img{
+        float: left;
+        width: 609px;
+        height: 692px;
+        padding-right: 60px;
+     
+    }
+    .profession-img-view{
+        position: relative;
+        width: 100%;
+        height: 100%;
+     
+    }
+    .view-container{
+    position: relative;
+    transform-style: preserve-3d;
+    }
+    .pic1{
+    width: 610px;
+    position: absolute;
+    top: 0;
+    left: -40px;
+    }
+    .pic1 img{
+        width: 100%;
+    }
+    .slider{
+    box-sizing: border-box;
+    padding-left: 32px;;
+    padding-right: 32px;
+    background-color: #FFFFFF;
+    box-shadow: 0px 0px 20px #ddd;
+    width: 435px;
+    position: absolute;
+    left: 50%;
+    margin-left: -212px;
+    border-radius: 100px;
+    height: 43px;
+    top: 330px;
+    }
+    .track{
+    height: 100%;
+    width: 100%;
+    position: relative;
+    line-height: 43px;
+    text-align: center;
+    color: #9C9C9C;
+    font-size: 14px;
+ 
+    }
+    .btn{
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    margin-top: 6px;
+    background: url(./layui/img/fliper@2x.png)no-repeat;
+    background-size: 30px 30px;
+    }
+    .pannel-content-desc{
+    display: inline-flex;
+    flex-direction: column;
+    padding-left: 109px;
+    padding-top: 142px;
+    }
+    .desc-label{
+    width: 85px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    background-color: #FFE6E6;
+    border-radius: 25px;
+    color: #FF4F4C;
+    font-size: 14px;
+    }
+    .desc-title{
+    width: 373px;
+    font-size: 28px;
+    margin-top: 15px;
+    color: #404040;
+    }
+    .desc-content{
+    width: 412px;
+    font-size: 15px;
+    margin-top: 24px;
+    color: #9C9C9C;
+    }
+    .desc-content p{
+        margin-bottom: 20px;
+    }
+    .d-flex justify-content-start{
+        margin-top: 80px;
+        justify-content: flex-start ;
+     
+    }
+    .button{
+    height: 54px ;
+    width: 300px ;
+    font-size: 18px ;
+    letter-spacing: 1px;
+    border-radius: 3px;
+    background: #ff4f4c;
+    line-height: 40px ;
+    cursor: pointer;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    }
+    .pannel-content-efficient{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    }
+    .pannel-content-desc1{
+    padding-left: 139px;
+    padding-top: 131px;
+    padding-right: 21px;
+    display: inline-flex;
+    flex-direction: column;
+    }
+    .desc-title{
+    width: 373px;
+    font-size: 28px;
+    margin-top: 15px;
+    color: #404040;
+    }
+    .pannel-content-sample{
+        display: flex;
+    flex-direction: row;
+    justify-content: center;
+    }
+    .pannel-content-desc2{
+    padding-top: 124px;
+    padding-left: 42px;
+    display: inline-flex;
+    flex-direction: column;
+    }
+    .pannel-content-feedback{
+        display: flex;
+    flex-direction: row;
+    justify-content: center;
+    }
+    #tk{
+      display: none;
+      width: 350px;
+      height: 300px;
+      border-radius: 50px;  
+    }
+    #tk img{
+      width: 200px;
+      margin:30px 0 0 70px;
+    }
+    #tk p{
+      text-align: center;
+    }
+    #tk a{
+      display: block;
+      font-size: 12px;
+      color: #9C9C9C;
+      text-align: center;
+      margin-top: 15px;
+    }
+</style>
+<body>
+    <div class="divide-line"></div>
+
+    <div class="pannel-content">
+
+        <div class="pannel-content-profession">
+            <div class="profession-img">
+                <div class="profession-img-view">
+                    <div class="view-container" id="view-container" style="transform: rotateY(0)">
+                    <div class="pic1">
+                        <img src="./layui/img/13.png" alt="">
+                    </div>
+                </div>
+                <div class="slider">
+                    <div class="track">拖动查看简历对比
+                        <div class="btn" style="left: 0px; top: 0px;">
+                        </div>
+                    </div>
+                </div>
+                </div>
+                <div class="pannel-content-desc">
+              
+                    </div>
+            </div>
+            <div class="pannel-content-desc">
+                <div class="desc-label">专业</div>
+                <div class="desc-title">
+                        超级简历由人力资源专家<br>设计并推荐
+                </div>
+                <div class="desc-content">
+                    <p>简历是为了展示你专业的工作能力，而市面上大量花哨而不适用的模板，不但浪费选择的时间和购买模板的金钱，甚至会给你的简历减分。</p>
+                    <p>超级简历获得了著名人力资源公司、金融机构、大型互联网公司的 HR 和业务部门负责招聘负责人的强烈认可和推荐。</p>
+                    <p>简历，只要做一份专业的。</p>
+                </div>
+                <div class="d-flex justify-content-start" id="layerDemo" style="margin-top: 80px">
+                  <button data-method="offset" data-type="auto" class="layui-btn layui-btn-normal button">立即制作专业简历</button>
+                <div id="tk">
+                  <img src="./layui/img/weixin.png" alt="">
+                  <p><i class="layui-icon layui-icon-login-wechat" style="color: #08ba5c"></i>扫码立即生成专业简历</p>
+                  <a href=""><u>其他注册方式</u></a>
+                </div> 
+                </div>
+                </div>
+        </div>
+
+        <div class="pannel-content-efficient" style="margin-top: 100px;">
+            <div class="pannel-content-desc1">
+                <div class="desc-label">高效</div>
+                <div class="desc-title">
+                    专业的简历排版，<br>自动排版，一键优化
+                </div>
+                <div class="desc-content">
+                    <p>不管写多少东西，删改多少次，都不需要在排版上浪费一点时间。<br>刚好一页纸，一键自动优化排版，让你专注于写出自己的优势，确保得到 HR 的注意和肯定。</p>
+                </div>
+                <div class="d-flex justify-content-start" id="layerDemo" style="margin-top: 80px">
+                    <button data-method="offset" data-type="auto" class="layui-btn layui-btn-normal button">立即制作专业简历</button>
+                    <div id="tk">
+                        <img src="./layui/img/weixin.png" alt="">
+                        <p><i class="layui-icon layui-icon-login-wechat" style="color: #08ba5c"></i>扫码立即生成专业简历</p>
+                        <a href=""><u>其他注册方式</u></a>
+                      </div>                   
+                  </div>
+            </div>
+            
+            <div class="pannel-content-img">
+                <img src="./layui/img/14.png" alt="">
+              </div>
+        </div>
+        
+        <div class="pannel-content-sample">
+                <div class="pannel-content-img">
+                  <img style="width: 739px;" src="./layui/img/15.png">
+                </div>
+                <div class="pannel-content-desc2">
+                  <div class="desc-label">简单</div>
+                  <div class="desc-title">
+                    详尽的引导、示例，填空就能<br>写出的好简历
+                  </div>
+                  <div class="desc-content">
+                    <p>跟随引导一步一步整理你的经历，每一步都会为你提供专业的建议和例子，彻底告别“废话”和“写不出来”。</p>
+                    <p>只需要填空就能写出 HR 真正关心的问题，突出你的能力和优势。</p>
+                  </div>
+                  <div class="d-flex justify-content-start" id="layerDemo" style="margin-top: 80px">
+                    <button data-method="offset" data-type="auto" class="layui-btn layui-btn-normal button">立即制作专业简历</button>
+                    <div id="tk">
+                        <img src="./layui/img/weixin.png" alt="">
+                        <p><i class="layui-icon layui-icon-login-wechat" style="color: #08ba5c"></i>扫码立即生成专业简历</p>
+                        <a href=""><u>其他注册方式</u></a>
+                      </div> 
+                  </div>
+                </div>
+        </div>
+
+        <div class="pannel-content-feedback">
+                <div class="pannel-content-desc">
+                  <div class="desc-label">反馈</div>
+                  <div class="desc-title">
+                    即时反馈和简历提示建议，<br>修改一下，直达梦想工作
+                  </div>
+                  <div class="desc-content">
+                    <p>自动简历优化反馈，迅速帮你了解简历上的不足，更能帮你快速分析和理想工作的差距。</p>
+                    <p>更有业界知名的导师辅导，让全球名企的实战经验，帮你大幅提升获得面试的概率。</p>
+                  </div>
+                    <div class="d-flex justify-content-start" id="layerDemo" style="margin-top: 80px">
+                    <button data-method="offset" data-type="auto" class="layui-btn layui-btn-normal button">立即制作专业简历</button>                   </div>
+                    <div id="tk">
+                        <img src="./layui/img/weixin.png" alt="">
+                        <p><i class="layui-icon layui-icon-login-wechat" style="color: #08ba5c"></i>扫码立即生成专业简历</p>
+                        <a href=""><u>其他注册方式</u></a>
+                      </div> 
+                  </div>
+                <div class="pannel-content-img">
+                  <img width="883" src="./layui/img/16.png">
+                </div>
+              </div>
+    </div>
+
+
+
+
+   <script>
+layui.use('layer', function(){ //独立版的layer无需执行这一句
+  var $ = layui.jquery, layer = layui.layer; //独立版的layer无需执行这一句
+  
+  //触发事件
+  var active = {
+    setTop: function(){
+      var that = this; 
+      //多窗口模式，层叠置顶
+      layer.open({
+        type: 2 //此处以iframe举例
+        ,title: '当你选择该窗体时，即会在最顶端'
+        ,area: ['390px', '260px']
+        ,shade: 0
+        ,maxmin: true
+        ,offset: [ //为了演示，随机坐标
+          Math.random()*($(window).height()-300)
+          ,Math.random()*($(window).width()-390)
+        ] 
+        ,content: '//layer.layui.com/test/settop.html'
+        ,btn: ['继续弹出', '全部关闭'] //只是为了演示
+        ,yes: function(){
+          $(that).click(); 
+        }
+        ,btn2: function(){
+          layer.closeAll();
+        }
+        
+        ,zIndex: layer.zIndex //重点1
+        ,success: function(layero){
+          layer.setTop(layero); //重点2
+        }
+      });
+    }
+    ,confirmTrans: function(){
+      //配置一个透明的询问框
+      layer.msg('大部分参数都是可以公用的<br>合理搭配，展示不一样的风格', {
+        time: 20000, //20s后自动关闭
+        btn: ['明白了', '知道了', '哦']
+      });
+    }
+    ,notice: function(){
+      //示范一个公告层
+      layer.open({
+        type: 1
+        ,title: false //不显示标题栏
+        ,closeBtn: false
+        ,area: '300px;'
+        ,shade: 0.8
+        ,id: 'LAY_layuipro' //设定一个id，防止重复弹出
+        ,btn: ['火速围观', '残忍拒绝']
+        ,btnAlign: 'c'
+        ,moveType: 1 //拖拽模式，0或者1
+        ,content: '<div style="padding: 50px; line-height: 22px; background-color: #393D49; color: #fff; font-weight: 300;">你知道吗？亲！<br>layer ≠ layui<br><br>layer只是作为Layui的一个弹层模块，由于其用户基数较大，所以常常会有人以为layui是layerui<br><br>layer虽然已被 Layui 收编为内置的弹层模块，但仍然会作为一个独立组件全力维护、升级。<br><br>我们此后的征途是星辰大海 ^_^</div>'
+        ,success: function(layero){
+          var btn = layero.find('.layui-layer-btn');
+          btn.find('.layui-layer-btn0').attr({
+            href: 'http://www.layui.com/'
+            ,target: '_blank'
+          });
+        }
+      });
+    }
+    ,offset: function(othis){
+      var type = othis.data('type')
+      ,text = othis.text();
+      
+      layer.open({
+        type: 1
+        ,title: false
+        ,offset: type //具体配置参考：http://www.layui.com/doc/modules/layer.html#offset
+        ,id: 'layerDemo'+type //防止重复弹出
+        ,content: $('#tk')
+        ,closeBtn: 0
+        ,btnAlign: 'c' //按钮居中
+        ,shade: 0 //不显示遮罩
+        ,yes: function(){
+          layer.closeAll();
+        }
+      });
+    }
+  };
+  
+  $('#layerDemo .layui-btn').on('click', function(){
+    var othis = $(this), method = othis.data('method');
+    active[method] ? active[method].call(this, othis) : '';
+  });
+  
+});
+</script>
+</body>
+</html>
